@@ -1,0 +1,117 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.about-copy p {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.6vw, 1.08rem);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.about-copy p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.5em;
+  line-height: 0.9;
+  font-weight: 700;
+  float: left;
+  padding: 0.04em 0.1em 0 0;
+  color: var(--cyan-light);
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Facts panel */
+.about-facts-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 0.4rem;
+  overflow: hidden;
+}
+
+.about-facts-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(300px 200px at 85% 0%, rgba(139, 92, 246, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.about-facts {
+  position: relative;
+}
+
+.about-fact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background-color var(--transition-fast);
+}
+
+.about-fact:last-child {
+  border-bottom: none;
+}
+
+.about-fact:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.about-fact-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--cyan-light);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.12));
+  border: 1px solid rgba(103, 232, 249, 0.18);
+}
+
+.about-fact-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.about-fact-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.about-fact-value {
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-fact-note {
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 920px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

@@ -1,0 +1,114 @@
+.cta-section {
+  padding-top: 0;
+}
+
+.cta-panel {
+  position: relative;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(2.6rem, 6vw, 4.2rem) clamp(1.5rem, 5vw, 3.5rem);
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* gradient hairline on top edge */
+.cta-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.8), rgba(139, 92, 246, 0.8), transparent);
+}
+
+.cta-glow {
+  position: absolute;
+  inset: auto -20% -60% -20%;
+  height: 130%;
+  background: radial-gradient(closest-side, rgba(99, 102, 241, 0.14), transparent);
+  pointer-events: none;
+}
+
+.cta-heading {
+  position: relative;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 1.1rem;
+}
+
+.cta-text {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 2.2rem;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.7vw, 1.1rem);
+  line-height: 1.75;
+}
+
+.cta-label {
+  position: relative;
+  margin: -0.6rem 0 2.4rem;
+  font-size: 1.05rem;
+  color: var(--text-tertiary);
+}
+
+.cta-label a {
+  color: var(--cyan-light);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(103, 232, 249, 0.35);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cta-label a:hover {
+  color: var(--cyan);
+  border-color: rgba(103, 232, 249, 0.7);
+}
+
+.cta-contacts {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.cta-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cta-contact svg {
+  color: var(--cyan-light);
+}
+
+.cta-contact:hover {
+  color: var(--text-primary);
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.35);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 560px) {
+  .cta-label {
+    font-size: 0.98rem;
+  }
+}
