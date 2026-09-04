@@ -1,5 +1,5 @@
 import { footerTagline, navLinks, personalInfo } from '../data/portfolioData';
-import { ArrowUpRight, Linkedin, Mail, Phone } from './icons';
+import { ArrowUpRight, Code, Linkedin, Mail, Phone } from './icons';
 import './Footer.css';
 
 const footerContacts = [
@@ -17,7 +17,9 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <a className="footer-logo" href="#home" aria-label="Back to top">
-              <span className="footer-logo-mark">{personalInfo.initials}</span>
+              <span className="footer-logo-mark">
+                <Code width={16} height={16} />
+              </span>
               <span>
                 <span className="footer-name">{personalInfo.name}</span>
                 <span className="footer-tagline">{footerTagline}</span>
