@@ -333,6 +333,8 @@
 @media (max-width: 920px) {
   .hero {
     padding-top: calc(var(--nav-height) + 3.5rem);
+    /* Content taller than the viewport must not overflow upward under the fixed navbar */
+    align-items: flex-start;
   }
 
   .hero-grid {
@@ -376,11 +378,6 @@
 @media (max-width: 560px) {
   .hero-actions .btn {
     flex: 1 1 auto;
-  }
-
-  .hero-chip-3,
-  .hero-chip-4 {
-    display: none;
   }
 
   .hero-chip-2 { right: -2%; }
